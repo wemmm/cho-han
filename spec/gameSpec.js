@@ -23,5 +23,15 @@ describe('Game', function(){
   it('can get the total score from the dice array', function(){
     game.diceArray = [3, 4, 1, 3, 6, 5]
     expect(game.addTheDiceUp()).toEqual(22)
-  })
+  });
+
+  it('can assess whether dice totals are even', function(){
+    game.diceArray = [3, 4, 1, 3, 6, 5]
+    expect(game.oddOrEven()).toEqual("even")
+  });
+
+  it('can assess whether dice totals are odd', function(){
+    game.diceArray = [3, 4, 1, 3, 6, 4]
+    expect(game.oddOrEven()).toEqual("odd")
+  });
 })

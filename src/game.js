@@ -15,3 +15,9 @@ Game.prototype.addTheDiceUp = function () {
   for(var i in this.diceArray) { total += this.diceArray[i]; }
   return total;
 };
+
+Game.prototype.oddOrEven = function () {
+  if (this.addTheDiceUp() % 2 == 0)
+    return "even";
+  return "odd";
+};
