@@ -21,3 +21,5 @@ Game.prototype.oddOrEven = function () {
     return "even";
   return "odd";
 };
+
+// TODO: Player and computer bets, win and lose states, restart game.
