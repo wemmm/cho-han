@@ -19,4 +19,9 @@ describe('Game', function(){
     game.rollTheDice();
     expect(game.diceArray.length).toEqual(6)
   });
+
+  it('can get the total score from the dice array', function(){
+    game.diceArray = [3, 4, 1, 3, 6, 5]
+    expect(game.addTheDiceUp()).toEqual(22)
+  })
 })

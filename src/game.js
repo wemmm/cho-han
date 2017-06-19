@@ -9,3 +9,9 @@ Game.prototype.rollTheDice = function () {
     this.diceArray.push(Math.floor(Math.random() * ((6 - 1) + 1) + 1));
   }
 };
+
+Game.prototype.addTheDiceUp = function () {
+  var total=0;
+  for(var i in this.diceArray) { total += this.diceArray[i]; }
+  return total;
+};
