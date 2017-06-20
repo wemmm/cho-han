@@ -1,6 +1,7 @@
 function Game() {
   this.DEFAULT_DICE_NUMBER = 2
   this.diceArray = []
+  this.playerBet = null
 }
 
 Game.prototype.rollTheDice = function () {
@@ -26,4 +27,10 @@ Game.prototype.makeBet = function (bet) {
   this.playerBet = bet;
 };
 
-// TODO: Player and computer bets, win and lose states, restart game.
+Game.prototype.didYouWin = function () {
+  if (this.playerBet === this.oddOrEven())
+    return true;
+  return false;
+};
+
+// TODO: Win and lose states, restart game.

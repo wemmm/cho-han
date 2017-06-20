@@ -39,4 +39,16 @@ describe('Game', function(){
     game.makeBet("even");
     expect(game.playerBet).toEqual("even")
   });
+
+  it('can assess whether the player won a bet', function(){
+    game.diceArray = [3, 4]
+    game.makeBet("odd");
+    expect(game.didYouWin()).toEqual(true)
+  });
+
+  it('can assess whether the player lost a bet', function(){
+    game.diceArray = [3, 4]
+    game.makeBet("even");
+    expect(game.didYouWin()).toEqual(false)
+  });
 })
