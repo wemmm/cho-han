@@ -11,18 +11,18 @@ describe('Game', function(){
     expect(game.diceArray).toEqual([])
   });
 
-  it('uses six dice by default', function(){
-    expect(game.DEFAULT_DICE_NUMBER).toEqual(6)
+  it('uses two dice by default', function(){
+    expect(game.DEFAULT_DICE_NUMBER).toEqual(2)
   });
 
-  it('rolls a dice six times and stores the result', function(){
+  it('rolls two dice and stores the result', function(){
     game.rollTheDice();
-    expect(game.diceArray.length).toEqual(6)
+    expect(game.diceArray.length).toEqual(2)
   });
 
   it('can get the total score from the dice array', function(){
-    game.diceArray = [3, 4, 1, 3, 6, 5]
-    expect(game.addTheDiceUp()).toEqual(22)
+    game.diceArray = [3, 4]
+    expect(game.addTheDiceUp()).toEqual(7)
   });
 
   it('can assess whether dice totals are even', function(){
@@ -33,5 +33,10 @@ describe('Game', function(){
   it('can assess whether dice totals are odd', function(){
     game.diceArray = [3, 4, 1, 3, 6, 4]
     expect(game.oddOrEven()).toEqual("odd")
+  });
+
+  it('takes a bet from the player', function(){
+    game.makeBet("even");
+    expect(game.playerBet).toEqual("even")
   });
 })

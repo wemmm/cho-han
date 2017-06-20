@@ -1,5 +1,5 @@
 function Game() {
-  this.DEFAULT_DICE_NUMBER = 6
+  this.DEFAULT_DICE_NUMBER = 2
   this.diceArray = []
 }
 
@@ -20,6 +20,10 @@ Game.prototype.oddOrEven = function () {
   if (this.addTheDiceUp() % 2 == 0)
     return "even";
   return "odd";
+};
+
+Game.prototype.makeBet = function (bet) {
+  this.playerBet = bet;
 };
 
 // TODO: Player and computer bets, win and lose states, restart game.
