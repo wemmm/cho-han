@@ -68,4 +68,14 @@ describe('Game', function(){
     game.didYouWin();
     expect(game.playerPoints).toEqual(15)
   });
+
+  it('can reset wagers, bets and dice arrays after a round', function(){
+    game.makeWager(5);
+    game.diceArray = [3, 4];
+    game.makeBet("odd");
+    game.didYouWin();
+    expect(game.diceArray).toEqual([]);
+    expect(game.playerBet).toEqual(null);
+    expect(game.playerWager).toEqual(null);
+  });
 })

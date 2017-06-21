@@ -32,8 +32,10 @@ Game.prototype.makeBet = function (bet) {
 Game.prototype.didYouWin = function () {
   if (this.playerBet === this.oddOrEven()) {
     this.playerPoints += (this.playerWager * 2)
+    this._resetRound();
     return true;
     }
+  this._resetRound();
   return false;
 };
 
@@ -42,4 +44,10 @@ Game.prototype.makeWager = function (number) {
   this.playerWager = number;
 };
 
-// TODO: Wagers, restart game.
+Game.prototype._resetRound = function () {
+  this.diceArray = [];
+  this.playerBet = null;
+  this.playerWager = null;
+};
+
+// TODO: Interface, edge case handling.
