@@ -52,7 +52,20 @@ describe('Game', function(){
     expect(game.didYouWin()).toEqual(false)
   });
 
-  it('knows that the player has a quantity of points/money', function(){
+  it('knows that the player has a quantity of points', function(){
     expect(game.playerPoints).toBeDefined()
+  });
+
+  it('allows a player to wager points on a bet', function(){
+    game.makeWager(5);
+    expect(game.playerPoints).toEqual(5)
+  });
+
+  it('returns two times the wager if player wins a bet', function(){
+    game.makeWager(5);
+    game.diceArray = [3, 4]
+    game.makeBet("odd");
+    game.didYouWin();
+    expect(game.playerPoints).toEqual(15)
   });
 })

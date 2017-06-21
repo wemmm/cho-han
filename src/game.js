@@ -2,6 +2,7 @@ function Game() {
   this.DEFAULT_DICE_NUMBER = 2
   this.diceArray = []
   this.playerBet = null
+  this.playerWager = null
   this.playerPoints = 10
 }
 
@@ -29,9 +30,16 @@ Game.prototype.makeBet = function (bet) {
 };
 
 Game.prototype.didYouWin = function () {
-  if (this.playerBet === this.oddOrEven())
+  if (this.playerBet === this.oddOrEven()) {
+    this.playerPoints += (this.playerWager * 2)
     return true;
+    }
   return false;
+};
+
+Game.prototype.makeWager = function (number) {
+  this.playerPoints -= number;
+  this.playerWager = number;
 };
 
 // TODO: Wagers, restart game.
