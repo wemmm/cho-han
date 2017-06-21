@@ -2,6 +2,7 @@ function Game() {
   this.DEFAULT_DICE_NUMBER = 2
   this.diceArray = []
   this.playerBet = null
+  this.playerPoints = 10
 }
 
 Game.prototype.rollTheDice = function () {
@@ -33,4 +34,4 @@ Game.prototype.didYouWin = function () {
   return false;
 };
 
-// TODO: Win and lose states, restart game.
+// TODO: Wagers, restart game.

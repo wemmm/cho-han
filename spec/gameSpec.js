@@ -51,4 +51,8 @@ describe('Game', function(){
     game.makeBet("even");
     expect(game.didYouWin()).toEqual(false)
   });
+
+  it('knows that the player has a quantity of points/money', function(){
+    expect(game.playerPoints).toBeDefined()
+  });
 })
