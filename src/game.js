@@ -31,7 +31,7 @@ Game.prototype.makeBet = function (bet) {
 
 Game.prototype.didYouWin = function () {
   if (this.playerBet === this.oddOrEven()) {
-    this.playerPoints += (this.playerWager * 2)
+    this.playerPoints += (this.playerWager * 2);
     this._resetRound();
     return true;
     }
