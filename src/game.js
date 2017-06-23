@@ -40,8 +40,13 @@ Game.prototype.didYouWin = function () {
 };
 
 Game.prototype.makeWager = function (number) {
-  this.playerPoints = (this.playerPoints - number);
-  this.playerWager = number;
+  if (number <= this.playerPoints) {
+    this.playerPoints = (this.playerPoints - number);
+    this.playerWager = number;
+    }
+  else {
+    alert("You don't have enough points!");
+  }
 };
 
 Game.prototype._resetRound = function () {

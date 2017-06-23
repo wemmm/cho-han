@@ -61,6 +61,12 @@ describe('Game', function(){
     expect(game.playerPoints).toEqual(5)
   });
 
+  it('does not allow a player to bet more points than they have', function() {
+    game.makeWager(11);
+    expect(game.playerPoints).toEqual(10);
+    expect(game.playerWager).toEqual(null)
+  })
+
   it('returns two times the wager if player wins a bet', function(){
     game.makeWager(5);
     game.diceArray = [3, 4]
@@ -78,4 +84,5 @@ describe('Game', function(){
     expect(game.playerBet).toEqual(null);
     expect(game.playerWager).toEqual(null);
   });
+
 })
