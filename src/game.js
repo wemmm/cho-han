@@ -35,13 +35,15 @@ Game.prototype.makeBet = function (bet) {
 };
 
 Game.prototype.didYouWin = function () {
-  if (this.playerBet === this.oddOrEven()) {
-    this.playerPoints += (this.playerWager * 2);
+  if (this._checkPlayerHasMadeBet()) {
+    if (this.playerBet === this.oddOrEven()) {
+      this.playerPoints += (this.playerWager * 2);
+      this._resetRound();
+      return true;
+      }
     this._resetRound();
-    return true;
-    }
-  this._resetRound();
-  return false;
+    return false;
+  }
 };
 
 Game.prototype.makeWager = function (number) {
