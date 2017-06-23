@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
     <title>Cho Han Bakuchi</title>
   </head>
   <body>
 
-  <div>
+  <div class="header">
+    <h1>Cho Han Bakuchi</h1>
+  </div>
+
+  <div class="menu">
     <h3>Your Bet: <span id="player_bet">none</span></h3>
     <h3>Your Wager: <span id="player_wager">0</span></h3>
     <h3>Your Points: <span id="player_points"></span></h3>
-  </div>
-    <br>
+  </div><br>
+
+  <div class="main">
   <div>
-    <button id="odd_bet" name="button">Odd</button>
-    <button id="even_bet" name="button">Even</button>
-  </div>
-    <br>
+    <button id="odd_bet" name="oddbutton">Odd</button>
+    <button id="even_bet" name="evenbutton">Even</button>
+  </div><br>
+
   <div>
     <input id="wager_amount" type="number" value="0"><button id="make_wager">Wager</button>
+  </div><br>
+
+  <div>
+    <button id="roll_the_dice" name="rollbutton">Roll the Dice</button>
+    <h3><span id="win_status"></span></h3>
+    <h3><span id="dice_array"></span></h3>
   </div>
+</div>
 
     <script src="src/game.js"></script>
     <script src="jquery.js"></script>

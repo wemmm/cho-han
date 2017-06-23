@@ -40,7 +40,7 @@ Game.prototype.didYouWin = function () {
 };
 
 Game.prototype.makeWager = function (number) {
-  this.playerPoints -= number;
+  this.playerPoints = (this.playerPoints - number);
   this.playerWager = number;
 };
 
@@ -50,4 +50,4 @@ Game.prototype._resetRound = function () {
   this.playerWager = null;
 };
 
-// TODO: Interface, edge case handling.
+// TODO: Interface styling, edge case handling.

@@ -21,4 +21,13 @@ $(document).ready(function() {
     $('#player_points').text(game.playerPoints)
   })
 
+  $('#roll_the_dice').on('click', function() {
+    game.rollTheDice();
+    $('#dice_array').text(game.diceArray)
+    $('#win_status').text(game.didYouWin())
+    $('#player_bet').text(game.playerBet)
+    $('#player_wager').text(game.playerWager)
+    $('#player_points').text(game.playerPoints)
+  })
+
 })
