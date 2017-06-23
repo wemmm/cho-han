@@ -7,9 +7,14 @@ function Game() {
 }
 
 Game.prototype.rollTheDice = function () {
-  var times = this.DEFAULT_DICE_NUMBER
-  for(var i=0; i < times; i++){
-    this.diceArray.push(Math.floor(Math.random() * ((6 - 1) + 1) + 1));
+  if (this._checkPlayerHasMadeBet()) {
+    var times = this.DEFAULT_DICE_NUMBER
+    for(var i=0; i < times; i++){
+      this.diceArray.push(Math.floor(Math.random() * ((6 - 1) + 1) + 1));
+    }
+  }
+  else {
+    alert("Please make a bet!");
   }
 };
 
@@ -55,4 +60,8 @@ Game.prototype._resetRound = function () {
   this.playerWager = null;
 };
 
-// TODO: Interface styling, edge case handling.
+Game.prototype._checkPlayerHasMadeBet = function () {
+  return this.playerBet != null;
+};
+
+// TODO: Interface styling, edge case handling, lose state.

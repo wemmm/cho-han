@@ -16,6 +16,7 @@ describe('Game', function(){
   });
 
   it('rolls two dice and stores the result', function(){
+    game.makeBet("odd");
     game.rollTheDice();
     expect(game.diceArray.length).toEqual(2)
   });
@@ -61,7 +62,7 @@ describe('Game', function(){
     expect(game.playerPoints).toEqual(5)
   });
 
-  it('does not allow a player to bet more points than they have', function() {
+  xit('does not allow a player to bet more points than they have', function() {
     game.makeWager(11);
     expect(game.playerPoints).toEqual(10);
     expect(game.playerWager).toEqual(null)
@@ -83,6 +84,11 @@ describe('Game', function(){
     expect(game.diceArray).toEqual([]);
     expect(game.playerBet).toEqual(null);
     expect(game.playerWager).toEqual(null);
+  });
+
+  xit('only allows dice to be rolled if player has entered a bet', function(){
+    game.rollTheDice();
+    expect(game.diceArray).toEqual([])
   });
 
 })
