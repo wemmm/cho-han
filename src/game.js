@@ -70,4 +70,4 @@ Game.prototype._diceRoll = function () {
   return Math.floor(Math.random() * (6) + 1)
 };
 
-// TODO: Interface styling, edge case handling, lose state.
+// TODO: Interface styling, edge case handling, lose state, better alternative to alert boxes.

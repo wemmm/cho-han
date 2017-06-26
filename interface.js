@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#images").hide();
   var game = new Game;
 
   $('#player_bet').text(game.playerBet)
@@ -28,6 +29,7 @@ $(document).ready(function() {
     $('#player_bet').text(game.playerBet)
     $('#player_wager').text(game.playerWager)
     $('#player_points').text(game.playerPoints)
+    $('#diceimage1').show();
   })
 
 })
