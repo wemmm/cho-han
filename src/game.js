@@ -10,7 +10,7 @@ Game.prototype.rollTheDice = function () {
   if (this._checkPlayerHasMadeBet()) {
     var times = this.DEFAULT_DICE_NUMBER
     for(var i=0; i < times; i++){
-      this.diceArray.push(Math.floor(Math.random() * ((6 - 1) + 1) + 1));
+      this.diceArray.push(this._diceRoll());
     }
   }
   else {
@@ -25,7 +25,7 @@ Game.prototype.addTheDiceUp = function () {
 };
 
 Game.prototype.oddOrEven = function () {
-  if (this.addTheDiceUp() % 2 == 0)
+  if (this.addTheDiceUp() % 2 === 0)
     return "even";
   return "odd";
 };
@@ -64,6 +64,10 @@ Game.prototype._resetRound = function () {
 
 Game.prototype._checkPlayerHasMadeBet = function () {
   return this.playerBet != null;
+};
+
+Game.prototype._diceRoll = function () {
+  return Math.floor(Math.random() * (6) + 1)
 };
 
 // TODO: Interface styling, edge case handling, lose state.

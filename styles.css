@@ -5,33 +5,58 @@
     box-sizing: border-box;
 }
 .header {
-    border: 1px solid red;
+    border: 1px solid white;
     padding: 15px;
     font-family: Megrim;
     text-align: center;
     font-size: 30px;
+    color: salmon;
 }
 .menu {
     width: 25%;
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    border: 1px solid white;
+    background-color: salmon;
+    border-radius: 50px;
+    transition: background-color 0.5s ease;
 }
+
+.menu:hover {
+  background-color: lightseagreen;
+}
+
 .main {
     text-align: center;
     width: 75%;
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    border: 1px solid white;
     font-family: Raleway;
+}
+
+h2 {
+  font-family: Raleway;
+  color: salmon;
 }
 
 h3 {
   font-family: Raleway;
+  color: white;
 }
 
 button {
   font-family: Raleway;
+  background-color: salmon;
+  color: white;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 100px;
+  transition: background-color 0.5s ease;
+}
+
+button:hover {
+  background-color: lightseagreen;
 }
 
 input {
