@@ -23,17 +23,17 @@ describe('Game', function(){
 
   it('can get the total score from the dice array', function(){
     game.diceArray = [3, 4]
-    expect(game.addTheDiceUp()).toEqual(7)
+    expect(game._addTheDiceUp()).toEqual(7)
   });
 
   it('can assess whether dice totals are even', function(){
     game.diceArray = [3, 4, 1, 3, 6, 5]
-    expect(game.oddOrEven()).toEqual("even")
+    expect(game._oddOrEven()).toEqual("even")
   });
 
   it('can assess whether dice totals are odd', function(){
     game.diceArray = [3, 4, 1, 3, 6, 4]
-    expect(game.oddOrEven()).toEqual("odd")
+    expect(game._oddOrEven()).toEqual("odd")
   });
 
   it('takes a bet from the player', function(){
@@ -89,6 +89,14 @@ describe('Game', function(){
   xit('only allows dice to be rolled if player has entered a bet', function(){
     game.rollTheDice();
     expect(game.diceArray).toEqual([])
+  });
+
+  it('can report dice rolls and win status in a readable way', function(){
+    game.makeWager(5);
+    game.diceArray = [3, 4];
+    game.makeBet("odd");
+    game.didYouWin();
+    expect(game.reportWinStatus()).toEqual("You win! The dice total was 7, and you win 10 points.")
   });
 
 })

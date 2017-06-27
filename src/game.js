@@ -18,17 +18,7 @@ Game.prototype.rollTheDice = function () {
   }
 };
 
-Game.prototype.addTheDiceUp = function () {
-  var total=0;
-  for(var i in this.diceArray) { total += this.diceArray[i]; }
-  return total;
-};
 
-Game.prototype.oddOrEven = function () {
-  if (this.addTheDiceUp() % 2 === 0)
-    return "even";
-  return "odd";
-};
 
 Game.prototype.makeBet = function (bet) {
   this.playerBet = bet;
@@ -36,7 +26,7 @@ Game.prototype.makeBet = function (bet) {
 
 Game.prototype.didYouWin = function () {
   if (this._checkPlayerHasMadeBet()) {
-    if (this.playerBet === this.oddOrEven()) {
+    if (this.playerBet === this._oddOrEven()) {
       this.playerPoints += (this.playerWager * 2);
       this._resetRound();
       return true;
@@ -54,6 +44,18 @@ Game.prototype.makeWager = function (number) {
   else {
     alert("You don't have enough points!");
   }
+};
+
+Game.prototype._oddOrEven = function () {
+  if (this._addTheDiceUp() % 2 === 0)
+  return "even";
+  return "odd";
+};
+
+Game.prototype._addTheDiceUp = function () {
+  var total=0;
+  for(var i in this.diceArray) { total += this.diceArray[i]; }
+  return total;
 };
 
 Game.prototype._resetRound = function () {
