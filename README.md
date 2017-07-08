@@ -13,12 +13,12 @@
 
 A JavaScript implementation of Chō Han Bakuchi. 
 
-Two dice roll functions are executed and the results stored in an array. The results are added together, a function checks if they're odd or even and then the outcome is compared to properties set by the player, such as their bet and how many points they've wagered/ If their bet matches the outcome, they are assigned two times their wager. 
+Two dice roll functions are executed and the results stored in an array. The results are added together, a function checks if they're odd or even and then the outcome is compared to properties set by the player, such as their bet and how many points they've wagered. If their bet matches the outcome, their points are increased by two times their wager. 
 
 ## And how do you play it?
 
 From Wikipedia:
-> The game uses two standard six-sided dice, which are shaken in a bamboo cup or bowl by a dealer. The cup is then overturned > onto the floor. Players then place their wagers on whether the sum total of numbers showing on the two dice will be "Chō" 
+> The game uses two standard six-sided dice, which are shaken in a bamboo cup or bowl by a dealer. The cup is then overturned onto the floor. Players then place their wagers on whether the sum total of numbers showing on the two dice will be "Chō" 
 > (even) or "Han" (odd). The dealer then removes the cup, displaying the dice. The winners collect their money.
 > The game was a mainstay of the bakuto, itinerant gamblers in old Japan, and is still played by the modern yakuza. In a 
 > traditional Chou-Han setting, players sit on a tatami floor. The dealer sits in the formal seiza position and is often 
