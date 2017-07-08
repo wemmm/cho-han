@@ -18,8 +18,6 @@ Game.prototype.rollTheDice = function () {
   }
 };
 
-
-
 Game.prototype.makeBet = function (bet) {
   this.playerBet = bet;
 };
@@ -46,9 +44,17 @@ Game.prototype.makeWager = function (number) {
   }
 };
 
+Game.prototype.reportWinStatus = function () {
+  if (this.didYouWin()) {
+    return "You win!"
+  }
+  else
+    return "You lose!"
+};
+
 Game.prototype._oddOrEven = function () {
   if (this._addTheDiceUp() % 2 === 0)
-  return "even";
+    return "even";
   return "odd";
 };
 
