@@ -32,7 +32,11 @@ Click on either odd or even to make a bet on the outcome, wager some points on i
 
 Winning bets are awarded double the wager amount, whereas losing bets get nothing (and lose their wagered points). 
 
+![screenshot](https://github.com/wemmm/cho-han/blob/master/images/screenshot.png)
+
 ## TODOs:
 - Proper lose state 
 - Images of dice to show up contextually depending on the outcome of the rollDice method
+- Feature testing
+- Deploy to web?
 
