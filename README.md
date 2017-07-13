@@ -35,6 +35,7 @@ Winning bets are awarded double the wager amount, whereas losing bets get nothin
 ![screenshot](https://github.com/wemmm/cho-han/blob/master/images/screenshot.png)
 
 ## TODOs:
+- Separate model and view responsibilities
 - Proper lose state 
 - Images of dice to show up contextually depending on the outcome of the rollDice method
 - Feature testing
