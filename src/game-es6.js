@@ -9,8 +9,8 @@ class Game {
 
   rollTheDice () {
     if (this._checkPlayerHasMadeBet()) {
-      var times = this.DEFAULT_DICE_NUMBER
-      for(var i=0; i < times; i++){
+      let times = this.DEFAULT_DICE_NUMBER
+      for(let i=0; i < times; i++){
         this.diceArray.push(this._diceRoll());
       }
     }
@@ -46,22 +46,17 @@ class Game {
   }
 
   reportWinStatus () {
-    if (this.didYouWin()) {
-      return "You win!"
-    }
-    else
-      return "You lose!"
+    this.didYouWin() ? "You win!" : "You lose!";
   }
 
   _oddOrEven () {
-    if (this._addTheDiceUp() % 2 === 0)
-      return "even";
-    return "odd";
+    if (this._addTheDiceUp() % 2 === 0) { return "even" }
+    else { return "odd" }
   }
 
   _addTheDiceUp () {
-    var total=0;
-    for(var i in this.diceArray) { total += this.diceArray[i]; }
+    let total=0;
+    for(let i in this.diceArray) { total += this.diceArray[i]; }
     return total;
   }
 
