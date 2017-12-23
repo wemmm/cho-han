@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   $('#roll_the_dice').on('click', function() {
     game.rollTheDice();
-    // $('#dice_array').text(game.diceArray)
+    $('#dice_array').text(game.diceArray)
     $('#win_status').text(game.reportWinStatus())
     $('#player_bet').text(game.playerBet)
     $('#player_wager').text(game.playerWager)
